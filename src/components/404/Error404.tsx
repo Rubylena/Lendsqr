@@ -1,9 +1,12 @@
 import React from 'react'
 import './error404.scss'
+import errImg from '../../assets/images/404.jpg'
 
 const Error404 = () => {
   return (
-    <div>Error404</div>
+    <div className='error-img'>
+      <img src={errImg} alt='Error display' />
+    </div>
   )
 }
 
