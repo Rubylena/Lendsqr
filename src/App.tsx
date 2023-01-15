@@ -9,7 +9,6 @@ import Error404 from './components/404/Error404';
 function App() {
 
   return (
-    <div>
       <Router>
         <Routes>
           <Route path='/' element={<Login />} />
@@ -20,7 +19,6 @@ function App() {
           <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>
-    </div>
   )
 }
 
