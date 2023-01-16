@@ -5,11 +5,15 @@ import Dashboard from './pages/Dashboard/Dashboard'
 import User from './pages/User/User';
 import UserDetails from './pages/UserDetails/UserDetails';
 import Error404 from './components/404/Error404';
+import Nav from './components/Nav/Nav';
+import Sidebar from './components/Sidebar/Sidebar';
 
 function App() {
 
   return (
       <Router>
+        {/* <Nav /> */}
+        {/* <Sidebar /> */}
         <Routes>
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />

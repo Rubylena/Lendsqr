@@ -1,0 +1,8 @@
+.sidebar {
+    max-width: 180px;
+    &-switch {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}

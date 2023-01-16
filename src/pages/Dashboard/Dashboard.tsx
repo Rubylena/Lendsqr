@@ -1,9 +1,14 @@
 import React from 'react'
 import './dashboard.scss'
+// import Nav from '../../components/Nav/Nav'
+// import Sidebar from '../../components/Sidebar/Sidebar'
 
 const Dashboard = () => {
   return (
-    <div>Dashboard</div>
+    <div>
+      {/* <Nav /> */}
+      {/* <Sidebar /> */}
+    </div>
   )
 }
 

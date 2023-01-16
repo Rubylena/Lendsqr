@@ -1,0 +1,11 @@
+.sidebar-options {
+    display: flex;
+    align-items: center;
+    gap: 1em;
+    &-img {
+        width: 16px;
+        img {
+            width: 100%;
+        }
+    }
+}
