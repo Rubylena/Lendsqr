@@ -1,0 +1,94 @@
+@import '../../components/defaultStyles/Colors.scss';
+
+.userTable {
+    background-color: $white;
+    width: 100%;
+    font-size: 14px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 30px;
+    border-spacing: 0;
+    // border-collapse: collapse;
+    &-head {
+        line-height: 14.08px;
+    }
+    
+    .th-img {
+        margin: -0.15em 0.6rem;
+    }
+
+    th, td {
+        text-align: left;
+        padding: 10px 0;
+    }
+    
+    tr:not(:last-child) {
+        td{
+            border-bottom:1px solid rgba(33, 63, 125, 0.1);
+        }
+    }
+    
+    tr td {
+        line-height: 16.42px;
+        &:nth-child(6) {
+            p{
+                border-radius: 100px;
+                padding: 10px 0;
+                text-align: center;
+            }
+        }
+        &:nth-child(7) {
+            position: relative;
+        }
+    }
+}
+
+.blacklist {
+    color: $red;
+    background-color: $red-bg;
+}
+
+.pending {
+    color: $yellow;
+    background-color: $yellow-bg;
+}
+
+.inactive {
+    background-color: $text-color-bg;
+
+}
+
+.activeOpt {
+    color: $green;
+    background-color: $green-bg;
+}
+
+.details {
+    background-color: $white;
+    position: absolute;
+    bottom: 0px;
+    right: 53px;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px 30px 20px 20px;
+    &-option {
+        font-size: 14px;
+        font-weight: 500;
+        span {
+            margin-left: 0.5rem;
+        }
+    }
+}
+
+.filter {
+    background-color: $white;
+    position: absolute;
+    top: 30px;
+    left: 0px;
+    border: 1px solid rgba(84, 95, 125, 0.04);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    padding: 20px 30px 20px 20px;
+}
