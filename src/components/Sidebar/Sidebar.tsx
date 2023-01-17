@@ -18,23 +18,24 @@ const Sidebar = () => {
         
         <SidebarOptions src={home} alt='dashboard' text='Dashboard' />
 
+
         <h2>Customers</h2>
         {customerData.map((item, index) => (
-            <div key={index}>
+            <div key={index} className={`not-active ${index === 0 && " active "}`}>
                 <SidebarOptions src={item.img} alt={item.alt} text={item.text} />
             </div>
         ))}
 
         <h2>Businesses</h2>
         {businessData.map((item, index) => (
-            <div key={index}>
+            <div key={index} className={`not-active`}>
                 <SidebarOptions src={item.img} alt={item.alt} text={item.text} />
             </div>
         ))}
 
         <h2>Settings</h2>
         {settings.map((item, index) => (
-            <div key={index}>
+            <div key={index} className={`not-active`}>
                 <SidebarOptions src={item.img} alt={item.alt} text={item.text} />
             </div>
         ))}

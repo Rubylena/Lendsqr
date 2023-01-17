@@ -9,26 +9,28 @@ import './nav.scss'
 const Nav = () => {
   return (
     <header className='header'>
-        <div>
-            <img src={logo} alt='logo' />
-        </div>
-        <div className='header-input'>
-            <input type='text' placeholder='Search for anything' />
-            <div className='header-input-search'>
-                <img src={search} alt='search icon' />
+        <div className='header-left'>
+            <div className='header-left-img'>
+                <img src={logo} alt='logo' />
+            </div>
+            <div className='header-left-input'>
+                <input type='text' placeholder='Search for anything' />
+                <div className='header-left-input-search'>
+                    <img src={search} alt='search icon' />
+                </div>
             </div>
         </div>
         <div className='nav-profile'>
-            <p>Docs</p>
+            <p className='nav-profile-docs'>Docs</p>
             <div>
                 <img src={alarm} alt='alarm icon' />
             </div>
-            <div>
+            <div className='nav-profile-picture'>
                 <img src={profile} alt='profile picture' />
-            </div>
-            <div className='nav-profile-user'>
-                <p>Adedeji</p>
-                <img src={drop} alt='dropdown' />
+                <div className='nav-profile-picture-user'>
+                    <p>Adedeji</p>
+                    <img src={drop} alt='dropdown' />
+                </div>
             </div>
         </div>
     </header>

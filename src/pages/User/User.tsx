@@ -1,9 +1,14 @@
 import React from 'react'
 import './user.scss'
+import Nav from '../../components/Nav/Nav'
+import Sidebar from '../../components/Sidebar/Sidebar'
 
 const User = () => {
   return (
-    <div>User</div>
+    <div>
+      <Nav />
+      <Sidebar />
+    </div>
   )
 }
 
