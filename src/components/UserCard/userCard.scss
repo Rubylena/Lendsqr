@@ -1,12 +1,13 @@
 @import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/Typography.scss';
 
 .userCard {
     display: flex;
     flex-flow: column nowrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 8px;
     background-color: $white;
-    padding: 1.5rem;
+    padding: 24px;
     width: 240px;
     height: 160px;
     border: 1px solid rgba(33, 63, 125, 0.06);
@@ -16,12 +17,12 @@
         width: 40px;
     }
     p:first-child {
-        font-weight: 500;
+        font-weight: $medium;
         font-size: 14px;
         line-height: 16.42px;
     }
     p:last-child {
-        font-weight: 600;
+        font-weight: $semibold;
         font-size: 24px;
         line-height: 28.15px;
         color: $primary;

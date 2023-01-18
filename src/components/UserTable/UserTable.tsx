@@ -36,39 +36,39 @@ const UserTable = () => {
             {filterer && (
                 <div className='filter'>
                     <form>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='organization' >Organization</label>
                             <select name="organization" id="organization">
                                 {organization.map((item, index) => (
-                                    <option >{item}</option>
+                                    <option key={index} >{item}</option>
                                 ))}
                             </select>
                         </div>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='username' >Username</label>
-                            <input type='text' name='username' placeholder='User' />
+                            <input className='inputs' type='text' name='username' placeholder='User' />
                         </div>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='email' >Email</label>
                             <input type='email' name='email' placeholder='Email' />
                         </div>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='date' >Date</label>
                             <input type='date' name='date' placeholder='Date' />
                         </div>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='tel' >Phone Number</label>
                             <input type='tel' name='tel' placeholder='Phone Number' />
                         </div>
-                        <div>
+                        <div className='form-filter-options'>
                             <label htmlFor='status' >Status</label>
                             <select name="status" id="status">
                                 {status.map((item, index) => (
-                                    <option >{item}</option>
+                                    <option key={index} >{item}</option>
                                 ))}
                             </select>
                         </div>
-                        <div>
+                        <div className='filter-buttons'>
                             <button type='reset' >Reset</button>
                             <button type='submit' >Filter</button>
                         </div>

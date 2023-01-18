@@ -1,12 +1,13 @@
 @import '../../components/defaultStyles/Colors.scss';
 @import '../../components/defaultStyles/MediaQueries.scss';
+@import '../../components/defaultStyles/Typography.scss';
 
 .header {
     display: flex;
     flex-flow: row wrap;
     justify-content: space-between;
     align-items: center;
-    padding: 1.5rem;
+    padding: 24px;
     box-shadow: 3px 0px 20px rgba(0, 0, 0, 0.04);
     background-color: $white;
     .header-left {
@@ -22,12 +23,10 @@
         }
         &-input{
             display: flex;
-            border: 1px solid $primary-border;
-            border-radius: 8px;
             width: 400px;
             input[type='text']{
+                border: 1px solid $primary-border;
                 padding: 0.5rem 1rem;
-                border: none;
                 border-top-left-radius: 8px;
                 border-bottom-left-radius: 8px;
                 outline: none;
@@ -61,14 +60,14 @@
     .nav-profile {
         display: flex;
         align-items: center;
-        gap: 1.5rem;
+        gap: 24px;
         color: $primary;
         &-docs{
             text-decoration: underline;
         }
         &-picture {
             display: flex;
-            gap: 0.5rem;
+            gap: 8px;
             img:first-child {
                 width: 48px;
                 border-radius: 100%;
@@ -76,14 +75,14 @@
             &-user {
                 display: flex;
                 align-items: center;
-                font-weight: 500;
+                font-weight: $medium;
             }
         }
     }
     @include screen-size(tablet-only) {
         justify-content: center;
-        gap: 1rem;
-        padding: 1.5rem;
+        gap: 16px;
+        padding: 24px;
     }
     @include screen-size(desktop-only) {
         justify-content: center;

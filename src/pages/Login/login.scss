@@ -21,7 +21,7 @@
         flex-flow: column nowrap;
         justify-content:space-around;
         background-color: $gray;
-        padding: 2rem;
+        padding: 32px;
         @include screen-size(tablet-only) {
             display: none;
         }
@@ -39,7 +39,7 @@
         flex-flow: column nowrap;
         justify-content: center;
         gap: 8px;
-        padding: 5rem;
+        padding: 80px;
         h1{
             font-weight: $bold;
             font-size: 40px;
@@ -94,6 +94,7 @@
                 color: $white;
                 text-transform: uppercase;
                 font-weight: 600;
+                cursor: pointer;
             }
         }
     }
@@ -107,7 +108,7 @@
     }
     @include screen-size(phone-only) {
         &-right {
-            padding: 2rem;
+            padding: 32px;
         }
     }
 }

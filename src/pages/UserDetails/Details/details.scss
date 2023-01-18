@@ -1,0 +1,49 @@
+@import '../../../components/defaultStyles/Colors.scss';
+@import '../../../components/defaultStyles/Typography.scss';
+
+.fullDetails {
+    background-color: $white;
+    padding: 24px;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    border-radius: 4px;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 20px;
+}
+
+.personalDetails {
+    display: flex;
+    gap: 8px;
+    margin-bottom: 10px;
+    div {
+        h4{
+            font-size: 12px;
+            text-transform: uppercase;
+        }
+        p{
+            font-weight: $medium;
+        }
+    }
+}
+
+.up {
+    div {
+        width: 30%;
+    }
+}
+.down {
+    div {
+        width: 19.3%;
+    }
+    &-employ{
+        div {
+            width: 24.5%;
+        }
+    }
+}
+
+hr{
+    border-top: 1px solid $primary;
+    opacity: 0.1;
+}

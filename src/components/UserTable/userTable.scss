@@ -1,4 +1,5 @@
 @import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/Typography.scss';
 
 .userTable {
     background-color: $white;
@@ -15,7 +16,7 @@
     }
     
     .th-img {
-        margin: -0.15em 0.6rem;
+        margin: -2.4px 9.6px;
     }
 
     th, td {
@@ -75,9 +76,9 @@
     padding: 20px 30px 20px 20px;
     &-option {
         font-size: 14px;
-        font-weight: 500;
+        font-weight: $medium;
         span {
-            margin-left: 0.5rem;
+            margin-left: 8px;
         }
     }
 }
@@ -91,4 +92,55 @@
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 20px 30px 20px 20px;
+
+    form {
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 22.4px;
+        .form-filter-options {
+            display: flex;
+            flex-flow: column nowrap;
+            gap: 5px;
+            label {
+                font-weight: $medium;
+            }
+            input, select {
+                border: 1px solid $primary-border;
+                border-radius: 8px;
+                padding: 10px;
+                outline: none;
+                width: 100%;
+            }
+
+            select {
+                color: $placeholder
+            }
+            select > option {
+                color: $text-color;
+            }
+        }
+    }
+    .filter-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 16px;
+        button{
+            width: 100%;
+            border: 1px solid $text-color;
+            border-radius: 8px;
+            background-color: $white;
+            padding: 6px 0;
+        }
+        button[type="submit"] {
+            background-color: $secondary;
+            color: $white;
+            border: none;
+        }
+    }
+}
+
+::placeholder{
+    color: $placeholder ;
+    line-height: 16px;
+    font-size: 14px;
 }

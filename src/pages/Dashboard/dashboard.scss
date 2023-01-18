@@ -6,15 +6,15 @@
     main {
         display: flex;
         flex-flow: column nowrap;
-        gap: 2rem;
-        padding: 5rem;
+        gap: 32px;
+        padding: 80px;
         width: 100%;
         .userOptions {
             display: flex;
             flex-flow: row wrap;
             justify-content: center;
             align-items: center;
-            gap: 1rem;
+            gap: 16px;
             &-single {
                 flex: 20%;
             }

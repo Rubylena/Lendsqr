@@ -40,7 +40,7 @@ const Dashboard = () => {
         <Sidebar />
 
         <main>
-          <h1>Users</h1>
+          <h2>Users</h2>
           <div className='userOptions'>
             {data.map((item, index) => (
               <div key={index} className='userOptions-single'>
@@ -49,9 +49,9 @@ const Dashboard = () => {
             ))}
           </div>
 
-          <div className='dashboard-table'>
+          <section className='dashboard-table'>
             <UserTable />
-          </div>
+          </section>
         </main>
       </div>
     </div>

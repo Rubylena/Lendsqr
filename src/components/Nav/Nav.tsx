@@ -8,7 +8,7 @@ import './nav.scss'
 
 const Nav = () => {
   return (
-    <header className='header'>
+    <nav className='header'>
         <div className='header-left'>
             <div className='header-left-img'>
                 <img src={logo} alt='logo' />
@@ -33,7 +33,7 @@ const Nav = () => {
                 </div>
             </div>
         </div>
-    </header>
+    </nav>
   )
 }
 
