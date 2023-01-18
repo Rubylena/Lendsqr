@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import './dashboard.scss'
 import Nav from '../../components/Nav/Nav'
 import Sidebar from '../../components/Sidebar/Sidebar'
@@ -10,6 +10,7 @@ import UserCard from '../../components/UserCard/UserCard'
 import UserTable from '../../components/UserTable/UserTable'
 
 const Dashboard = () => {
+
   const data = [
     {
       img: user,
@@ -50,7 +51,7 @@ const Dashboard = () => {
           </div>
 
           <section className='dashboard-table'>
-            <UserTable />
+            <UserTable  />
           </section>
         </main>
       </div>

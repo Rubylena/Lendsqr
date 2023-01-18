@@ -6,14 +6,47 @@ import userMenu from '../../assets/icon/userMenu.png'
 import eye from '../../assets/icon/eye.png'
 import black from '../../assets/icon/blacklistUser.png'
 import active from '../../assets/icon/activeUsericon.png'
+import { axiosBase } from './Users'
+import { useEffect } from 'react';
+
 
 const UserTable = () => {
+    type User = {
+        orgName: string;
+        createdAt: string;
+        userName: string;
+        email: string;
+        phoneNumber: string;
+    };
+      
+    type GetUsersResponse = {
+        map(arg0: (item: { orgName: string; createdAt: string; userName: string; email: string; phoneNumber: string }, index: number) => JSX.Element): React.ReactNode
+        data: User[];
+    };
     const [details, setDetails] = useState(false);
     const [filterer, setFilterer] = useState(false);
+
+    const [users, SetUsers] = useState<GetUsersResponse>([])
+
+    async function getUser() {
+        try {
+          const response = await axiosBase.get<GetUsersResponse>('/users');
+          SetUsers(response.data)
+        //   return users
+    } catch (error) {
+        console.error(error);
+    }
+}
+console.log(users)
+    
+      useEffect(() => {
+        getUser()
+      }, [])
 
     const headingData = [ 'ORGANIZATION', 'USERNAME', 'EMAIL',
                          'PHONE NUMBER', 'DATE JOINED', 'STATUS'] 
 
+    const status = ['Active', 'Pending', 'Blacklisted', 'Inactive']                     
     const openDetails = (index: number) => {
         console.log(index)
         setDetails(!details)
@@ -21,6 +54,12 @@ const UserTable = () => {
 
     const openFilter = (index: number) => {
         setFilterer(!filterer)
+    }
+
+    const customDate =(ele: string)=>{
+        const date = new Date(ele).toLocaleDateString('en-US', { year: "numeric", month: "short", day: "numeric" } )
+        const time = new Date(ele).toLocaleTimeString('en-US', { hour: "2-digit", minute: "2-digit" })
+        return date + ' ' + time
     }
 
   return (
@@ -92,6 +131,26 @@ const UserTable = () => {
                             {item.status}
                         </p>
                     </td>
+                    <td onClick={()=>openDetails(index)} ><img src={userMenu} alt='menu' /></td>
+                </tr>
+            ))}
+            {users.map((item: User, index: number) => (
+                <tr key={index}>
+                    <td>{item.orgName} </td>
+                    <td>{item.userName.split('.').join(' ')}</td>
+                    <td>{item.email}</td>
+                    <td>{item.phoneNumber}</td>
+                    <td>{customDate(item.createdAt)}</td>
+                    {status.map((item2, index) =>(
+                        <td><p>{item2}</p></td>
+                    ))}
+                    {/* <td>
+                        <p className={`${item.status == 'Blacklisted' ? 'blacklist'
+                        :item.status === 'Pending' ? 'pending' 
+                        :item.status === 'Active' ? 'activeOpt' : 'inactive' }`}>
+                            {item.status}
+                        </p>
+                    </td> */}
                     <td onClick={()=>openDetails(index)} ><img src={userMenu} alt='menu' /></td>
                 </tr>
             ))}
