@@ -9,7 +9,7 @@ const Login = () => {
         <div className="login">
             <section className="login-left">
                 <div className="login-left-img">
-                    <img src={logo} alt='logo' />
+                    <Link to='/' ><img src={logo} alt='logo' /></Link>
                 </div>
                 <div className="login-left-display">
                     <img src={loginImg} alt='login display' />

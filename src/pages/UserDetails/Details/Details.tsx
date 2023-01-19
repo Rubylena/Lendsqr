@@ -1,30 +1,33 @@
 import React from 'react'
+import { ActiveUserDetails } from '../../../components/UserTable/Api'
 import './details.scss'
 
-const Details = () => {
+
+
+const Details = ({userDetailsBox}:ActiveUserDetails) => {
   return (
     <div className='fullDetails'>
         <h3>Personal Information</h3>
         <div className='personalDetails up'>
             <div>
                 <h4>FULL NAME</h4>
-                <p>Grace Effiom</p>
+                <p>{userDetailsBox.profile.firstName} {userDetailsBox.profile.lastName} </p>
             </div>
             <div>
                 <h4>PHONE NUMBER</h4>
-                <p>07060780922</p>
+                <p>{userDetailsBox.profile.phoneNumber}</p>
             </div>
             <div>
                 <h4>EMAIL ADDRESS</h4>
-                <p>grace@gmail.com</p>
+                <p className='break'>{userDetailsBox.email}</p>
             </div>
             <div>
                 <h4>BVN</h4>
-                <p>07060780922</p>
+                <p>{userDetailsBox.profile.bvn}</p>
             </div>
             <div>
                 <h4>GENDER</h4>
-                <p>Female</p>
+                <p>{userDetailsBox.profile.gender}</p>
             </div>
         </div>
         <div className='personalDetails down'>
@@ -47,33 +50,33 @@ const Details = () => {
         <div className='personalDetails up'>
             <div>
                 <h4>LEVEL OF EDUCATION</h4>
-                <p>B.Sc</p>
+                <p>{userDetailsBox.education.level}</p>
             </div>
             <div>
                 <h4>EMPLOYMENT STATUS</h4>
-                <p>Employed</p>
+                <p>{userDetailsBox.education.employmentStatus}</p>
             </div>
             <div>
                 <h4>SECTOR OF EMPLOYMENT</h4>
-                <p>FinTech</p>
+                <p>{userDetailsBox.education.sector}</p>
             </div>
             <div>
                 <h4>DURATION OF EMPLOYMENT</h4>
-                <p>2 years</p>
+                <p>{userDetailsBox.education.duration}</p>
             </div>
         </div>
         <div className='personalDetails down-employ'>
             <div>
                 <h4>OFFICE EMAIL</h4>
-                <p>grace@lendsqr.com</p>
+                <p>{userDetailsBox.education.officeEmail}</p>
             </div>
             <div>
                 <h4>MONTHLY INCOME</h4>
-                <p>₦200,000.00- ₦400,000.00</p>
+                <p>₦{userDetailsBox.education.monthlyIncome[0]}- ₦{userDetailsBox.education.monthlyIncome[1]}</p>
             </div>
             <div>
                 <h4>LOAN REPAYMENT</h4>
-                <p>40,000</p>
+                <p>₦{userDetailsBox.education.loanRepayment}</p>
             </div>
         </div>
         <hr />
@@ -82,15 +85,15 @@ const Details = () => {
         <div className='personalDetails down'>
             <div>
                 <h4>TWITTER</h4>
-                <p>@grace_effiom</p>
+                <p>{userDetailsBox.socials.twitter}</p>
             </div>
             <div>
                 <h4>FACEBOOK</h4>
-                <p>Grace Effiom</p>
+                <p>{userDetailsBox.socials.twitter}</p>
             </div>
             <div>
                 <h4>INSTAGRAM</h4>
-                <p>@grace_effiom</p>
+                <p>{userDetailsBox.socials.twitter}</p>
             </div>
         </div>
         <hr />
@@ -99,15 +102,15 @@ const Details = () => {
         <div className='personalDetails down'>
             <div>
                 <h4>FULL NAME</h4>
-                <p>Debby Ogana</p>
+                <p>{userDetailsBox.guarantor.firstName} {userDetailsBox.guarantor.lastName}</p>
             </div>
             <div>
                 <h4>PHONE NUMBER</h4>
-                <p>07060780922</p>
+                <p>{userDetailsBox.guarantor.phoneNumber}</p>
             </div>
             <div>
                 <h4>EMAIL ADDRESS</h4>
-                <p>debby@gmail.com</p>
+                <p>{userDetailsBox.guarantor.address}</p>
             </div>
             <div>
                 <h4>RELATIONSHIP</h4>
@@ -119,15 +122,15 @@ const Details = () => {
         <div className='personalDetails down'>
             <div>
                 <h4>FULL NAME</h4>
-                <p>Debby Ogana</p>
+                <p>{userDetailsBox.guarantor.firstName} {userDetailsBox.guarantor.lastName}</p>
             </div>
             <div>
                 <h4>PHONE NUMBER</h4>
-                <p>07060780922</p>
+                <p>{userDetailsBox.guarantor.phoneNumber}</p>
             </div>
             <div>
                 <h4>EMAIL ADDRESS</h4>
-                <p>debby@gmail.com</p>
+                <p>{userDetailsBox.guarantor.address}</p>
             </div>
             <div>
                 <h4>RELATIONSHIP</h4>

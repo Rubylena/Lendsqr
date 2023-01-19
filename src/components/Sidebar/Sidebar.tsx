@@ -15,8 +15,10 @@ const Sidebar = () => {
             <p>Switch Organization</p>
             <img src={down} alt='down arrow' />
         </div>
-        
-        <SidebarOptions src={home} alt='dashboard' text='Dashboard' />
+
+        <div className={`not-active`}>
+            <SidebarOptions src={home} alt='dashboard' text='Dashboard' />
+        </div>
 
 
         <h2>Customers</h2>
@@ -35,7 +37,7 @@ const Sidebar = () => {
 
         <h2>Settings</h2>
         {settings.map((item, index) => (
-            <div key={index} className={`not-active`}>
+            <div key={index} className='not-active'>
                 <SidebarOptions src={item.img} alt={item.alt} text={item.text} />
             </div>
         ))}

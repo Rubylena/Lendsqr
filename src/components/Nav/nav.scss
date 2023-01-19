@@ -44,6 +44,7 @@
                 border-bottom-right-radius: 8px;
                 background: $secondary;
                 border: 1px solid $secondary;
+                cursor: pointer;
             }
         }
         @include screen-size(tablet-only) {
@@ -62,6 +63,7 @@
         align-items: center;
         gap: 24px;
         color: $primary;
+        cursor: pointer;
         &-docs{
             text-decoration: underline;
         }

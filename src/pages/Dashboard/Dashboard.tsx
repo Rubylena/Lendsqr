@@ -38,7 +38,9 @@ const Dashboard = () => {
     <div>
       <Nav />
       <div className='dashboard'>
-        <Sidebar />
+        <div className='dashboard-sidebar'>
+          <Sidebar />
+        </div>
 
         <main>
           <h2>Users</h2>

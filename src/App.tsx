@@ -13,7 +13,7 @@ function App() {
           <Route path='/' element={<Login />} />
           <Route path='/login' element={<Login />} />
           <Route path='/dashboard' element={<Dashboard />} />
-          <Route path='/user-details' element={<UserDetails />} />
+          <Route path='/user/:id' element={<UserDetails />} />
           <Route path='*' element={<Error404 />} />
         </Routes>
       </Router>

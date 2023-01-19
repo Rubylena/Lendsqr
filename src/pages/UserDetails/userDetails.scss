@@ -1,4 +1,5 @@
 @import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/MediaQueries.scss';
 @import '../../components/defaultStyles/Typography.scss';
 
 .userDetails {
@@ -10,6 +11,16 @@
         gap: 32px;
         padding: 80px;
         width: 100%;
+        @include screen-size(tablet-only){
+            padding: 40px;
+        }
+        @include screen-size(phone-only){
+            padding: 20px;
+        }
+    }
+    a{
+        text-decoration: none;
+        color: $text-color;
     }
     &-back {
         display: flex;
@@ -18,6 +29,8 @@
     }
     &-heading {
         display: flex;
+        flex-flow: row wrap;
+        gap: 10px;
         justify-content: space-between;
         h2{
             color: $primary;
@@ -29,6 +42,7 @@
                 border-radius: 8px;
                 font-weight: $semibold;
                 font-size: 14px;
+                cursor: pointer;
             }
             button:first-child{
                 border: 1px solid $red;
@@ -53,16 +67,20 @@
         padding: 24px 24px 0 24px;
         &-box {
             display: flex;
+            flex-flow: row wrap;
             gap: 32px;
             align-items: center;
             &-name {
                 display: flex;
+                flex-flow: row wrap;
                 align-items: center;
                 gap: 16px;
                 &-img {
                     width: 100px;
+                    border-radius: 100%;
                     img{
                         width: 100%;
+                        border-radius: 100%;
                     }
                 }
                 p:first-child {
@@ -75,9 +93,15 @@
                 height: 50px;
                 border-left: 1px solid $primary;
                 opacity: 0.2;
+                @include screen-size(tablet-only){
+                    height: 0;
+                    width: 100%;
+                    border-left: none;
+                    border-bottom: 1px solid $primary;
+                }
             }
             &-tier {
-                p{font-size: 14px;}
+                p{font-size: 14px; font-weight: $medium;}
                 span{color: $yellow;}
                 span:first-child{color: $yellow;}
             }
@@ -95,11 +119,19 @@
 
         &-menu {
             display: flex;
+            flex-flow: row wrap;
             justify-content: space-between;
             color: black;
+            cursor: pointer;
             span{
                 padding: 0 16px 16px;
             }
+        }
+    }
+
+    &-sidebar{
+        @include screen-size(tablet-only){
+            display: none;
         }
     }
 }

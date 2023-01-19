@@ -14,9 +14,14 @@
     &-head {
         line-height: 14.08px;
     }
-    
+
     .th-img {
-        margin: -2.4px 9.6px;
+        margin: -2.5px 6px;
+        cursor: pointer;
+    }
+
+    th {
+        position: relative;
     }
 
     th, td {
@@ -32,15 +37,22 @@
     
     tr td {
         line-height: 16.42px;
+        &:nth-child(4) {
+            min-width: 170px;
+        }
+        &:nth-child(5) {
+            min-width: 170px;
+        }
         &:nth-child(6) {
             p{
                 border-radius: 100px;
-                padding: 10px 0;
+                padding: 10px 20px;
                 text-align: center;
             }
         }
         &:nth-child(7) {
             position: relative;
+            cursor: pointer;
         }
     }
 }
@@ -66,14 +78,19 @@
 }
 
 .details {
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 16px;
+    width: 170px;
     background-color: $white;
     position: absolute;
-    bottom: 0px;
-    right: 53px;
+    top: 67px;
+    right: -48px;
     border: 1px solid rgba(84, 95, 125, 0.04);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
-    padding: 20px 30px 20px 20px;
+    padding: 20px 25px 20px 20px;
+    z-index: 1;
     &-option {
         font-size: 14px;
         font-weight: $medium;
@@ -81,18 +98,22 @@
             margin-left: 8px;
         }
     }
+    a{
+        text-decoration: none;
+        color: $text-color;
+    }
 }
 
 .filter {
     background-color: $white;
     position: absolute;
-    top: 30px;
+    top: 37px;
     left: 0px;
     border: 1px solid rgba(84, 95, 125, 0.04);
     box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
     border-radius: 4px;
     padding: 20px 30px 20px 20px;
-
+    z-index: 1;
     form {
         display: flex;
         flex-flow: column nowrap;

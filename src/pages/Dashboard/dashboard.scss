@@ -1,4 +1,5 @@
 @import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/MediaQueries.scss';
 
 .dashboard {
     background: $bg;
@@ -12,15 +13,28 @@
         .userOptions {
             display: flex;
             flex-flow: row wrap;
-            justify-content: center;
+            justify-content: space-between;
             align-items: center;
             gap: 16px;
-            &-single {
-                flex: 20%;
+            @include screen-size(tablet-only){
+                justify-content: center;
             }
+        }
+        @include screen-size(tablet-only){
+            padding: 40px;
+        }
+        @include screen-size(phone-only){
+            padding: 20px;
         }
     }
     &-table {
-        overflow-x: auto;
+        @include screen-size(desktop-only){
+            overflow-x: auto;
+        }
+    }
+    &-sidebar {
+        @include screen-size(tablet-only){
+            display: none;
+        }
     }
 }

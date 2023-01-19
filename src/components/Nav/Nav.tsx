@@ -5,13 +5,14 @@ import alarm from '../../assets/icon/alarm-icon.png'
 import profile from '../../assets/icon/profile.png'
 import drop from '../../assets/icon/dropdown.png'
 import './nav.scss'
+import { Link } from 'react-router-dom'
 
 const Nav = () => {
   return (
     <nav className='header'>
         <div className='header-left'>
             <div className='header-left-img'>
-                <img src={logo} alt='logo' />
+                <Link to='/login'><img src={logo} alt='logo' /></Link>
             </div>
             <div className='header-left-input'>
                 <input type='text' placeholder='Search for anything' />
