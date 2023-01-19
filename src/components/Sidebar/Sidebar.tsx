@@ -12,8 +12,8 @@ const Sidebar = () => {
     <div className='sidebar'>
         <div  className='sidebar-switch'>
             <img src={briefcase} alt='switch organization' />
-            <p>Switch Organization</p>
-            <img src={down} alt='down arrow' />
+            <span>Switch Organization</span>
+            <img src={down} alt='down arrow' /> 
         </div>
 
         <div className={`not-active`}>

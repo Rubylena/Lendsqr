@@ -8,6 +8,7 @@ import loan from '../../assets/icon/userWithLoan.png'
 import savings from '../../assets/icon/userWithSavings.png'
 import UserCard from '../../components/UserCard/UserCard'
 import UserTable from '../../components/UserTable/UserTable'
+import MobileSidebar from '../../components/Sidebar/MobileSidebar'
 
 const Dashboard = () => {
 
@@ -42,6 +43,9 @@ const Dashboard = () => {
           <Sidebar />
         </div>
 
+        <div className='dashboard-sidebar-mobile'>
+          <MobileSidebar />
+        </div>
         <main>
           <h2>Users</h2>
           <div className='userOptions'>

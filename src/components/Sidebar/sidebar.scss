@@ -36,3 +36,7 @@
     border-left: 3px solid $secondary;
     background-color: $secondary-bg;
 }
+.mobile {
+    overflow-y: visible !important;
+    border: 3px solid green;
+}
