@@ -4,9 +4,15 @@ import { axiosBase } from "./Api";
 import { useEffect } from "react";
 import ViewUser from "./ViewUser";
 import FIlterTable from "./FIlterTable";
+import Pagination from "./Pagination";
+import Skeleton from "react-loading-skeleton";
+import "react-loading-skeleton/dist/skeleton.css";
 
 const UserTable = () => {
-  const [usersStored, setUsersStored] = useState<GetUsersResponse>([]);
+  const [usersStored, setUsersStored] = useState([]);
+  const [displayUsers, setDisplayUsers] = useState([]);
+  const [activeDropDown, setActiveDropDown] = useState<any>("");
+  const [isLoading, setIsLoading] = useState(false);
 
   type User = {
     orgName: string;
@@ -17,28 +23,14 @@ const UserTable = () => {
     id?: string;
   };
 
-  type GetUsersResponse = {
-    map(
-      arg0: (
-        item: {
-          orgName: string;
-          createdAt: string;
-          userName: string;
-          email: string;
-          phoneNumber: string;
-        },
-        index: number
-      ) => JSX.Element
-    ): React.ReactNode;
-    data: User[];
-  };
-
-
   async function getUser() {
+    setIsLoading(true);
     try {
-      const response = await axiosBase.get<GetUsersResponse>("/users");
-      localStorage.setItem('users', JSON.stringify(response.data));
+      const response = await axiosBase.get("/users");
+      localStorage.setItem("users", JSON.stringify(response.data));
+      setIsLoading(false);
     } catch (error) {
+      setIsLoading(false);
       console.error(error);
     }
   }
@@ -46,11 +38,11 @@ const UserTable = () => {
   useEffect(() => {
     getUser();
   }, []);
-  
+
   useEffect(() => {
-    const items = JSON.parse(localStorage.getItem('users')!);
+    const items = JSON.parse(localStorage.getItem("users")!);
     if (items) {
-     setUsersStored(items);
+      setUsersStored(items);
     }
   }, []);
 
@@ -77,43 +69,79 @@ const UserTable = () => {
   };
 
   return (
-    <table className="userTable">
-      <thead className="userTable-head">
-        <tr>
-          {headingData.map((item, index) => (
-            <th key={index}>
-              {item}
-              <FIlterTable />
-            </th>
-          ))}
-          
-        </tr>
-      </thead>
-      <tbody className="userTable-body">
-        {usersStored.map((item: User, index: number) => (
-          <tr key={index}>
-            <td>{item.orgName} </td>
-            <td>{item.userName}</td>
-            <td>{item.email}</td>
-            <td>{item.phoneNumber}</td>
-            <td>{customDate(item.createdAt)}</td>
-            <td>
-              <p className="activeOpt">Active</p>
-            </td>
-            {/* <td>
-                        <p className={`${item.status == 'Blacklisted' ? 'blacklist'
-                        :item.status === 'Pending' ? 'pending' 
-                        :item.status === 'Active' ? 'activeOpt' : 'inactive' }`}>
-                            {item.status}
-                        </p>
-                    </td> */}
-            <td>
-              <ViewUser id={item.id} />
-            </td>
+    <div onClick={() => setActiveDropDown("")}>
+      <table className="userTable table">
+        <thead className="userTable-head">
+          <tr>
+            {headingData.map((item, index) => (
+              <th key={index}>
+                {item}
+                <FIlterTable current={index} />
+              </th>
+            ))}
           </tr>
-        ))}
-      </tbody>
-    </table>
+        </thead>
+        {isLoading ? (
+          <Skeleton
+            count={10}
+            width="500%"
+            height={40}
+            highlightColor="white"
+          />
+        ) : (
+          <tbody className="userTable-body">
+            {displayUsers.map((item: User, index: number) => (
+              <tr key={index}>
+                <td>{item.orgName} </td>
+                <td>{item.userName}</td>
+                <td>{item.email}</td>
+                <td>{item.phoneNumber}</td>
+                <td>{customDate(item.createdAt)}</td>
+                {/* <td>
+              <p className="activeOpt">Active</p>
+            </td> */}
+                <td>
+                  <p
+                    className={`${
+                      index % 2 == 0
+                        ? "activeOpt"
+                        : index % 3 === 0
+                        ? "pending"
+                        : index % 5 === 0
+                        ? "blacklist"
+                        : "inactive"
+                    }`}
+                  >
+                    {`${
+                      index % 2 == 0
+                        ? "Active"
+                        : index % 3 === 0
+                        ? "Pending"
+                        : index % 5 === 0
+                        ? "Blacklisted"
+                        : "Inactive"
+                    }`}
+                  </p>
+                </td>
+                <td>
+                  <ViewUser
+                    id={item.id}
+                    setActiveDropDown={setActiveDropDown}
+                    activeDropDown={activeDropDown}
+                  />
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        )}
+      </table>
+      {usersStored.length && (
+        <Pagination
+          setDisplayUsers={setDisplayUsers}
+          usersStored={usersStored}
+        />
+      )}
+    </div>
   );
 };
 

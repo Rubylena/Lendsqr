@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const axiosBase = axios.create({
+export const axiosBase = axios.create({
     baseURL: 'https://6270020422c706a0ae70b72c.mockapi.io/lendsqr/api/v1',
     headers: {
         'X-Custom-Header': 'Grace-effiong',
@@ -9,10 +9,11 @@ const axiosBase = axios.create({
     }
 });
 
-type ActiveUserDetails = {
+export type ActiveUserDetails = {
     userName: string;
     accountNumber: string;
     accountBalance: string;
+    email: string;
     profile:{
       firstName: string;
       lastName: string;
@@ -45,5 +46,3 @@ type ActiveUserDetails = {
       phoneNumber: string;
     }
   }
-
-export { axiosBase, ActiveUserDetails }

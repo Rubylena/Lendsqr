@@ -6,6 +6,7 @@ import left from "../../assets/icon/leftArr.png";
 import Details from "./Details/Details";
 import { ActiveUserDetails, axiosBase } from "../../components/UserTable/Api";
 import { Link } from "react-router-dom";
+import MobileSidebar from "../../components/Sidebar/MobileSidebar";
 
 const UserDetails = () => {
   const [menuActive, setMenuActive] = useState(0);
@@ -49,6 +50,9 @@ const activeUserId = window.location.pathname.split("/")[2];
           <div className="userDetails-sidebar">
             <Sidebar />
           </div>
+          <div className='userDetails-sidebar-mobile'>
+          <MobileSidebar />
+        </div>
           <main>
             <Link to='/dashboard'><section className="userDetails-back">
               <img src={left} alt="Left arrow" />

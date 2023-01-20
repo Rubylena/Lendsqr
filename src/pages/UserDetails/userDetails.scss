@@ -134,6 +134,15 @@
             display: none;
         }
     }
+    &-sidebar-mobile {
+        display: none;
+        @include screen-size(tablet-only){
+            display: block;
+        }
+    }
+    @include screen-size(tablet-only){
+        flex-flow: column nowrap;
+    }
 }
 
 .activeUserMenu {
