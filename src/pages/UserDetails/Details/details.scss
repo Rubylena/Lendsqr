@@ -27,6 +27,11 @@
             font-weight: $medium;
         }
     }
+    &-single{
+        display: flex;
+        flex-flow: column nowrap;
+        gap: 32px;
+    }
 }
 
 .up {
@@ -38,17 +43,9 @@
 }
 .down {
     div {
-        width: 22%;
+        width: 26%;
         @include screen-size(phone-only){
             width: 100%;
-        }
-    }
-    &-employ{
-        div {
-            width: 24.3%;
-            @include screen-size(tablet-only){
-                width: 100%;
-            }
         }
     }
 }

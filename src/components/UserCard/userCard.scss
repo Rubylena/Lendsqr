@@ -1,5 +1,6 @@
 @import '../../components/defaultStyles/Colors.scss';
 @import '../../components/defaultStyles/Typography.scss';
+@import '../../components/defaultStyles/MediaQueries.scss';
 
 .userCard {
     display: flex;
@@ -26,5 +27,8 @@
         font-size: 24px;
         line-height: 28.15px;
         color: $primary;
+    }
+    @include screen-size(desktop-only){
+        width: 100%;
     }
 }

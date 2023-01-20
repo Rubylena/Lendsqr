@@ -10,18 +10,22 @@
         flex-flow: column nowrap;
         gap: 32px;
         padding: 80px;
-        width: 100%;
+        width: 80%;
         .userOptions {
             display: flex;
             flex-flow: row wrap;
             justify-content: space-between;
-            align-items: center;
+            // align-items: center;
             gap: 16px;
-            @include screen-size(tablet-only){
-                justify-content: center;
+            @include screen-size(desktop-only){
+                flex-flow: column nowrap;
             }
         }
+        @include screen-size(desktop-only){
+            width: 65%;
+        }
         @include screen-size(tablet-only){
+            width: 100%;
             padding: 40px;
         }
         @include screen-size(phone-only){
@@ -29,17 +33,19 @@
         }
     }
     &-table {
-        @include screen-size(desktop-only){
-            overflow-x: auto;
-        }
+        overflow-x: auto;
     }
     &-sidebar {
+        width: 20%;
+        @include screen-size(desktop-only){
+            width: 35%;
+        }
         @include screen-size(tablet-only){
             display: none;
         }
     }
     &-sidebar-mobile {
-        // display: none;
+        display: none;
         @include screen-size(tablet-only){
             display: block;
         }

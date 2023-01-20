@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './sidebar.scss'
 import briefcase from '../../assets/icon/briefcase.png'
 import down from '../../assets/icon/downarr.png'
@@ -7,17 +7,19 @@ import SidebarOptions from './SidebarOptions'
 import { customerData, businessData, settings } from './SidebarData'
 
 const MobileSidebar = () => {
+    const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <div className='navbar bg-body-tertiary '>
-        <div className='container-fluid'>
+    <div>
+        <div className='sidebars'>
             <p>Sidebar</p>
-            <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasNavbar" aria-controls="offcanvasNavbar">
-                <span className="navbar-toggler-icon"></span>
-            </button>
-
-            <div className="mobile offcanvas offcanvas-end" tabIndex={-1} id="offcanvasNavbar" aria-labelledby="offcanvasNavbarLabel">
-                <button type="button" className="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+            <button className='sidebars-bars' onClick={() => setIsOpen(!isOpen)}>☰</button>
+        </div>
+        <div className={`sidebars-menu ${isOpen ? 'open' : 'closed'}`}>
+            <div className='sidebars-menu-close'>
+                <button onClick={() => setIsOpen(!isOpen)}>✕</button>
+            </div>
+            <div>
                 <div  className='sidebar-switch'>
                     <img src={briefcase} alt='switch organization' />
                     <p>Switch Organization</p>

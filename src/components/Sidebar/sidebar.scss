@@ -1,4 +1,5 @@
 @import '../../components/defaultStyles/Colors.scss';
+@import '../../components/defaultStyles/Typography.scss';
 
 .sidebar {
     width: 280px;
@@ -27,6 +28,7 @@
 
 .not-active{
     border-left: 3px solid $white;
+    cursor: pointer;
 }
 .not-active:hover {
     border-left: 3px solid $secondary ;
@@ -35,8 +37,58 @@
 .active {
     border-left: 3px solid $secondary;
     background-color: $secondary-bg;
+    cursor: pointer;
 }
 .mobile {
     overflow-y: visible !important;
     border: 3px solid green;
+}
+
+.sidebars{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: $white;
+    padding: 16px;
+    font-size: 20px;
+    font-weight: $medium;
+    border: 1px solid rgba(33, 63, 125, 0.06);
+    box-shadow: 3px 5px 20px rgba(0, 0, 0, 0.04);
+    
+    &-bars{
+        width: 50px;
+        font-size: 24px;
+    }
+    &-menu {
+        width: 300px;
+        background-color: $white;
+        z-index: 1;
+        @media (max-width: 768px) {
+            width: 80%;
+            position: absolute;
+            top: 0;
+            left: -100%;
+            transition: left 0.3s ease-in-out;
+    
+            &.open {
+                left: 0;
+            }
+        }
+        &-close {
+            display: flex;
+            justify-content: flex-end;
+            padding: 16px;
+            button{
+                width: 50px;
+                font-size: 28px;
+                background-color: white;
+                border: none;
+                color: $primary;
+                font-weight: 700;
+            }
+        }
+        h2{
+            padding: 0 0 0 15px;
+        }
+    }
 }
