@@ -70,7 +70,7 @@ const UserTable = () => {
 
   return (
     <div onClick={() => setActiveDropDown("")}>
-      <table className="userTable table">
+      <table className="userTable">
         <thead className="userTable-head">
           <tr>
             {headingData.map((item, index) => (

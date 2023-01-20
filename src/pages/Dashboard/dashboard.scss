@@ -33,7 +33,12 @@
         }
     }
     &-table {
-        overflow-x: auto;
+        @include screen-size(desktop-only){
+            overflow-x: auto;
+        }
+        @include screen-size(desktop-plus){
+            overflow-x: auto;
+        }
     }
     &-sidebar {
         width: 20%;
