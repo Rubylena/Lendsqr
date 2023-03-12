@@ -45,7 +45,7 @@ function Pagination({ setDisplayUsers, usersStored }: any) {
         previousLabel="<"
         className="pagination"
         activeClassName="active-page"
-        // renderOnZeroPageCount={null}
+        renderOnZeroPageCount={()=> null}
       />
     </div>
   );
